@@ -6,11 +6,39 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:12:22 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/18 18:22:21 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/25 21:00:18 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
+
+static void	to_binary(int pid_nb, char c)
+{
+	int		bit;
+
+	bit = 0;
+	while (bit < 8)
+	{
+		if ((c & (1 << (7 - bit))) == 0)
+		{
+			if (kill(pid_nb, SIGUSR1) == -1)
+			{
+				write(1, "Error\n", 6);
+				exit (-1);
+			}
+		}
+		else
+		{
+			if (kill(pid_nb, SIGUSR2) == -1)
+			{
+				write(1, "Error\n", 6);
+				exit (-1);
+			}
+		}
+		usleep(100);
+		bit++;
+	}
+}
 
 int	check_pid(char **argv)
 {
