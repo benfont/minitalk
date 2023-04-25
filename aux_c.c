@@ -6,13 +6,13 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:25:40 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/17 15:19:30 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/18 16:30:30 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
 
-int	atoi_c(const char *str)
+int	atoi(const char *str)
 {
 	int		count;
 	int		sign;

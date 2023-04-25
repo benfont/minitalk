@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux_s.c                                            :+:      :+:    :+:   */
+/*   server.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 13:26:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/18 17:17:17 by aitlopez         ###   ########.fr       */
+/*   Created: 2023/04/18 16:25:44 by aitlopez          #+#    #+#             */
+/*   Updated: 2023/04/18 16:29:48 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "server.h"
-/**
- * @brief 
- * 
- * @param c 
- */
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#ifndef SERVER_H
+# define SERVER_H
 
-void	put_nbr(int nb)
-{
-	if (nb >= 10)
-	{
-		put_nb(nb / 10);
-		nb = nb % 10;
-	}
-	if (nb <= 9)
-		ft_putchar(nb + 48);
-}
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <signal.h>
+
+void	ft_putchar(char c);
+void	put_nbr(int nb);
+
+#endif
