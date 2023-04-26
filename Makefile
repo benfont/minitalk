@@ -6,23 +6,26 @@
 #    By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/17 12:52:32 by aitlopez          #+#    #+#              #
-#    Updated: 2023/04/18 16:13:37 by aitlopez         ###   ########.fr        #
+#    Updated: 2023/04/26 18:56:25 by aitlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minitalk
 
+CLIENT = client
+SERVER = server
+
 CC = gcc
 
-SRC_CLIENT = client.c
-SRC_SERVER = server.c
+SRC_CLIENT = client.c aux_c.c
+SRC_SERVER = server.c aux_s.c
 
 FLAGS = -Wall -Werror -Wextra
 
-OBJ_CLIENT = $(SRC:.c=.o)
-OBJ_SERVER = $(SRC:.c=.o)
+OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
+OBJ_SERVER = $(SRC_SERVER:.c=.o)
 
-HADER_CLIENT = client.h
+HEADER_CLIENT = client.h
 HEADER_SERVER = server.h
 
 RM = rm -f
@@ -36,7 +39,7 @@ $(CLIENT) : $(OBJ_CLIENT) $(HEADER_CLIENT)
 	$(CC) $(FLAGS) $(OBJ_CLIENT) -o $(CLIENT)
 
 $(SERVER) : $(OBJ_SERVER) $(HEADER_SERVER)
-   $(CC) $(FLAGS) $(OBJ_SERVER) -o $(SERVER)
+	$(CC) $(FLAGS) $(OBJ_SERVER) -o $(SERVER)
 
 # all :	$(CLIENT) $(SERVER)
 

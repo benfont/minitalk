@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:28:34 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/18 18:20:43 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/26 20:02:40 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # include <stdlib.h>
 # include <signal.h>
 
-int		atoi(const char *str);
+int		ft_atoi(const char *str);
 
 #endif

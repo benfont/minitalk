@@ -6,13 +6,13 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:25:40 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/18 16:30:30 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/26 20:01:27 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
 
-int	atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int		count;
 	int		sign;
@@ -21,19 +21,19 @@ int	atoi(const char *str)
 	count = 0;
 	sign = -1;
 	nb = 0;
-	while (str[c] == ' ' || str[c] == '\t' || str[c] == '\n')
-		c++;
-	if (str[c] == '-')
+	while (str[count] == ' ' || str[count] == '\t' || str[count] == '\n')
+		count++;
+	if (str[count] == '-')
 	{
 		sign = -1;
-		c++;
+		count++;
 	}
-	if (str[c] == '+')
-		c++;
-	while (str[c] != '\0' && (str[c] >= '0' && str[c] <= '9'))
+	if (str[count] == '+')
+		count++;
+	while (str[count] != '\0' && (str[count] >= '0' && str[count] <= '9'))
 	{
-		nb = (nb * 10) + (str[c] - '0')
-		c++;
+		nb = (nb * 10) + (str[count] - '0');
+		count++;
 	}
 	return (nb * sign);
 }
