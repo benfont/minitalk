@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:50:05 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/26 19:04:04 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:28:31 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 /*
 void	get_signals(int signal)
 {
-	
+	static int		bit = 0;
+	unsigned char	c = '\0';
+
+
 }
 */
 void	get_pid(void)
@@ -44,5 +47,9 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	get_pid();
+//	signal = (SIGUSR1, &get_signals);
+//	signal = (SIGUSR2, &get_signals);
+	while (1)
+		sleep(1);
 	return (0);
 }

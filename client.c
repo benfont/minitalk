@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:12:22 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/26 20:06:08 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:58:36 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	to_binary(int pid_nb, char c)
 	int		bit;
 
 	bit = 0;
+	printf("esto es pid_nb: %i", pid_nb);
 	while (bit < 8)
 	{
 		if ((c & (1 << (7 - bit))) == 0)
@@ -75,6 +76,7 @@ int	main(int argc, char **argv)
 	int		pid_nb;
 	
 	pid_nb = ft_atoi(argv[1]);
+	printf("esto essss pid_nb: %i", pid_nb);
 	if (argc != 3)
 	{
 		write(1, "Error\nNo correct arguments", 26);
