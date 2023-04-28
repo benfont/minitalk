@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   aux_c.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:25:40 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/26 20:01:27 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:40:24 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
-
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @return int 
+ */
 int	ft_atoi(const char *str)
 {
 	int		count;

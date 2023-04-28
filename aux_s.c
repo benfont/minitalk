@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:26:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/26 18:42:59 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:40:23 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 /**
  * @brief 
  * 
- * @param c 
+ * @param nb 
  */
 void	put_nbr(int nb)
 {

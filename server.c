@@ -6,20 +6,41 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:50:05 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/27 17:28:31 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/28 18:40:43 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
-/*
+/**
+ * @brief Get the signals object
+ * recibe y junta bytes enviados en formato binario
+ * a traves de senales SIGUSR1 y SIGUSR2 
+ * @param signal 
+ */
 void	get_signals(int signal)
 {
 	static int		bit = 0;
-	unsigned char	c = '\0';
+	static unsigned char	c = '\0';
 
+	c = c << 1;
+	if (signal == SIGUSR1)
+	{
+	}
+	else
+		c = c | 1;
+	bit++;
+	if (bit == 8)
+	{
 
+		write(1, &c, 1);
+		bit = 0;
+		c = '\0';
+	}
 }
-*/
+/**
+ * @brief Get the pid object
+ * 
+ */
 void	get_pid(void)
 {
 	int		pid;
@@ -36,10 +57,13 @@ void	get_pid(void)
 /**
  * @brief 
  * 
- * envia el PID a otra terminal
+ * @param argc 
+ * @param argv 
+ * @return int 
  */
 int	main(int argc, char **argv)
 {
+	write(1, "\n", 1);
 	(void)argv;
 	if (argc != 1)
 	{
@@ -47,9 +71,11 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	get_pid();
-//	signal = (SIGUSR1, &get_signals);
-//	signal = (SIGUSR2, &get_signals);
+	write(1, "\n", 1);
+	signal(SIGUSR1, &get_signals);
+	signal(SIGUSR2, &get_signals);
 	while (1)
-		sleep(1);
+//		sleep(1);
+		pause();
 	return (0);
 }
