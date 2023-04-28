@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:50:05 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/28 18:40:43 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/28 19:22:27 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	get_pid(void)
  */
 int	main(int argc, char **argv)
 {
-	write(1, "\n", 1);
 	(void)argv;
 	if (argc != 1)
 	{
@@ -75,7 +74,7 @@ int	main(int argc, char **argv)
 	signal(SIGUSR1, &get_signals);
 	signal(SIGUSR2, &get_signals);
 	while (1)
-//		sleep(1);
-		pause();
+		sleep(1);
+//		pause();
 	return (0);
 }
